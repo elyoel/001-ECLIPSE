@@ -48,33 +48,39 @@ public class Mamifero {
 		this.identificador = identificador;
 	}
 	
+	private boolean tengoPadre() {
+		return padre != null;
+	}
+	private boolean tengoMadre() {
+		return madre != null;
+	}
 	
 	public Mamifero getAbueloMaterno() {
-		if (madre != null)
+		if (tengoMadre())
 			return madre.getPadre();
 		return null;
 	}
 	public Mamifero getAbuelaMaterna() {
-		if (madre != null)
+		if (tengoMadre())
 			return madre.getMadre();
 		return null;
 	}
 	public Mamifero getAbueloPaterno() {
-		if (padre != null)
+		if (tengoPadre())
 			return padre.getPadre();
 		return null;
 	}
 	public Mamifero getAbuelaPaterna() {
-		if (padre != null)
+		if (tengoPadre())
 			return padre.getMadre();
 		return null;
 	}
 	
 	public boolean tieneComoAncestroA(Mamifero unMamifero) {
 		Queue<Mamifero> cola = new LinkedList<>();
-		if (padre != null)
+		if (tengoPadre())
 			cola.offer(padre);
-		if (madre != null)
+		if (tengoMadre())
 			cola.offer(madre);
 		boolean esAncestro = false;
 		Mamifero aux = null;
@@ -83,9 +89,9 @@ public class Mamifero {
 			if (aux == unMamifero){
 				esAncestro = true;
 			} else {
-				if (aux.getPadre() != null)
+				if (aux.tengoPadre())
 					cola.offer(aux.getPadre());
-				if (aux.getMadre() != null)
+				if (aux.tengoMadre())
 					cola.offer(aux.getMadre());
 			}
 		}
