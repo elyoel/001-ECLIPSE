@@ -77,24 +77,8 @@ public class Mamifero {
 	}
 	
 	public boolean tieneComoAncestroA(Mamifero unMamifero) {
-		Queue<Mamifero> cola = new LinkedList<>();
-		if (tengoPadre())
-			cola.offer(padre);
-		if (tengoMadre())
-			cola.offer(madre);
-		boolean esAncestro = false;
-		Mamifero aux = null;
-		while (!cola.isEmpty() && !esAncestro) {
-			aux = cola.poll();
-			if (aux == unMamifero){
-				esAncestro = true;
-			} else {
-				if (aux.tengoPadre())
-					cola.offer(aux.getPadre());
-				if (aux.tengoMadre())
-					cola.offer(aux.getMadre());
-			}
-		}
-		return esAncestro;
+		return (padre == unMamifero) || (madre == unMamifero)
+				|| (padre != null && padre.tieneComoAncestroA(unMamifero))
+				|| (madre != null && madre.tieneComoAncestroA(unMamifero));
 	}
 }
