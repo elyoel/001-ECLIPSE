@@ -11,20 +11,16 @@ public class ReporteDeConstruccion {
 	}
 	
 	public double volumenDeMaterial(String material) {
-		double volumenTotal = 0;
-		for (Pieza pieza: piezas) {
-			if (pieza.getMaterial().equals(material))
-				volumenTotal += pieza.getVolumen();
-		}
-		return volumenTotal;
+		return piezas.stream()
+			.filter(p -> p.equals(material))
+			.mapToDouble(p -> p.getSuperficie())
+			.sum();
 	}
 	
 	public double superficieDeColor(String color) {
-		double superfieTotal = 0;
-		for (Pieza pieza: piezas) {
-			if (pieza.getColor().equals(color))
-				superfieTotal += pieza.getSuperficie();
-		}
-		return superfieTotal;
+		return piezas.stream()
+			.filter(p -> p.getColor().equals(color))
+			.mapToDouble(p -> p.getSuperficie())
+			.sum();
 	}
 }
