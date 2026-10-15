@@ -4,7 +4,7 @@ public class Cilindro extends Pieza {
 	private double radio;
 	private double altura;
 
-	public Cilindro(String color, String material, double radio, double altura) {
+	public Cilindro(String material, String color, double radio, double altura) {
 		super(color, material);
 		this.radio = radio;
 		this.altura = altura;

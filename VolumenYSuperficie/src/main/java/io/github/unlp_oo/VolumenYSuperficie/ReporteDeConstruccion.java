@@ -10,10 +10,14 @@ public class ReporteDeConstruccion {
 		piezas = new ArrayList<>();
 	}
 	
+	public void agregarPieza(Pieza pieza){
+		piezas.add(pieza);
+	}
+
 	public double volumenDeMaterial(String material) {
 		return piezas.stream()
-			.filter(p -> p.equals(material))
-			.mapToDouble(p -> p.getSuperficie())
+			.filter(p -> p.getMaterial().equals(material))
+			.mapToDouble(p -> p.getVolumen())
 			.sum();
 	}
 	
