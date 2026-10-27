@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="balanzaElectronica/src/main/java"/>
+	<classpathentry kind="src" path="balanzaElectronica/src/test/java"/>
+	<classpathentry kind="src" path="balanzaElectronicaMejorado-objetos/src/main/java"/>
+	<classpathentry kind="src" path="balanzaElectronicaMejorado-objetos/src/test/java"/>
+	<classpathentry kind="src" path="cuentaConGanchos/src/main/java"/>
+	<classpathentry kind="src" path="cuentaConGanchos/src/test/java"/>
+	<classpathentry kind="src" path="ejercicio1-wallpost/src/main/java"/>
+	<classpathentry kind="src" path="ejercicio1-wallpost/src/test/java"/>
+	<classpathentry kind="src" path="figurasYCuerpos/src/main/java"/>
+	<classpathentry kind="src" path="figurasYCuerpos/src/test/java"/>
+	<classpathentry kind="src" path="genealogiaSalvaje/src/main/java"/>
+	<classpathentry kind="src" path="genealogiaSalvaje/src/test/java"/>
+	<classpathentry kind="src" path="Presupuesto/src/main/java"/>
+	<classpathentry kind="src" path="Presupuesto/src/test/java"/>
+	<classpathentry kind="src" path="redAlumbrado/src/main/java"/>
+	<classpathentry kind="src" path="redAlumbrado/src/test/java"/>
+	<classpathentry kind="src" path="VolumenYSuperficie/src/main/java"/>
+	<classpathentry kind="src" path="VolumenYSuperficie/src/test/java"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
