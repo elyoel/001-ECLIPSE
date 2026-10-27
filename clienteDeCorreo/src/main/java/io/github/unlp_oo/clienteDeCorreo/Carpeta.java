@@ -34,4 +34,8 @@ public class Carpeta {
 			.mapToInt(e -> e.tamaño())
 			.sum();
 	}
+	
+	public List<Email> getEmails(){
+		return new ArrayList<>(emails);
+	}
 }
