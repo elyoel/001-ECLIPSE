@@ -11,7 +11,6 @@ public class ClienteDeCorreo {
 	public ClienteDeCorreo() {
 		imbox = new Carpeta("imbox");
 		carpetas = new ArrayList<>();
-		carpetas.add(imbox);
 	}
 	
 	public void recibir(Email email) {
@@ -19,7 +18,7 @@ public class ClienteDeCorreo {
 	}
 	
 	public Email buscarTexto(String texto) {
-		return carpetas.stream()
+		return getCarpetas().stream()
 			.map(c -> c.buscar(texto))
 			.filter(m -> m != null)
 			.findFirst()
@@ -27,12 +26,18 @@ public class ClienteDeCorreo {
 	}
 	
 	public int espacioOcupado() {
-		return carpetas.stream()
+		return getCarpetas().stream()
 			.mapToInt(c -> c.tamaño())
 			.sum();
 	}
 	
 	public void agregarCarpeta(Carpeta carpeta) {
 		this.carpetas.add(carpeta);
+	}
+	
+	public List<Carpeta> getCarpetas(){
+		List<Carpeta> aux = new ArrayList<>(carpetas);
+		aux.add(imbox);
+		return aux;
 	}
 }
