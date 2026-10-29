@@ -1,5 +1,6 @@
 package io.github.unlp_oo.alquilerDePropiedadesConCancelacion;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,12 +9,14 @@ public class Propiedad {
 	private String direccion;
 	private double precioNoche;
 	private List<Reserva> reservas;
+	private Politica politica;
 	
-	public Propiedad(String nombre, String direccion, double precioNoche) {
+	public Propiedad(String nombre, String direccion, double precioNoche, Politica politica) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.precioNoche = precioNoche;
 		reservas = new ArrayList<>();
+		this.politica = politica;
 	}
 	
 	public boolean consultarDisponibilidad(DateLapse periodo) {
@@ -33,10 +36,12 @@ public class Propiedad {
 			.sum();
 	}
 	
-	public void cancelarReserva(Reserva reserva) {
+	public double cancelarReserva(Reserva reserva, LocalDate fechaActual) {
 		if (!reserva.estaEnCurso()) {
 			reservas.remove(reserva);
+			return politica.calcularReembolso(reserva, fechaActual);
 		}
+		return 0;
 	}
 
 	public double getPrecioNoche() {

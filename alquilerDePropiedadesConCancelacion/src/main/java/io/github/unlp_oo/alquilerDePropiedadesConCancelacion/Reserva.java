@@ -28,4 +28,8 @@ public class Reserva {
 	public boolean estaEnCurso() {
 		return periodo.includesDate(LocalDate.now());
 	}
+
+	public LocalDate inicioReservacion() {
+		return periodo.getFrom();
+	}
 }
