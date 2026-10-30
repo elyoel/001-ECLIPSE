@@ -14,20 +14,27 @@ public abstract class Orden{
 		this.domicilio = domicilio;
 		productos = new ArrayList<>();
 	}
-	public String toString() {
-		return "Orden [fecha=" + fecha + ", domicilio=" + domicilio + "]";
+	
+	public int cantidadProductos() {
+		return productos.size();
 	}
-	public abstract double calcular();
 	
 	public double calcularCosto() {
-		double aux = productos.stream()
+		double montoTotal = productos.stream()
 				.mapToDouble(p -> p.getCosto())
-				.sum();
+				.sum() + calcular();
 		
-		return aux + calcular();
+		if (aplicaDescuento())
+			montoTotal *= 0.9;
+		
+		return montoTotal;
 	}
 	
 	public void agregarProducto(Producto producto) {
 		productos.add(producto);
 	}
+
+	public abstract double calcular();
+	public abstract boolean aplicaDescuento();
+
 }

@@ -19,5 +19,8 @@
 	<classpathentry kind="src" path="redAlumbrado/src/test/java"/>
 	<classpathentry kind="src" path="VolumenYSuperficie/src/main/java"/>
 	<classpathentry kind="src" path="VolumenYSuperficie/src/test/java"/>
+	<classpathentry kind="src" path="greenHOOme/src/main/java"/>
+	<classpathentry kind="src" path="greenHOOme/src/test/java"/>
+
 	<classpathentry kind="output" path="bin"/>
 </classpath>

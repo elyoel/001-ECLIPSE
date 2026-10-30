@@ -19,9 +19,4 @@ public class Tecnico {
 		this.valorHora = valorHora;
 	}
 
-	public String toString() {
-		return "Tecnico [nombreCompleto=" + nombreCompleto + ", especialidad=" + especialidad + ", valorHora="
-				+ valorHora + "]";
-	}
-	
 }

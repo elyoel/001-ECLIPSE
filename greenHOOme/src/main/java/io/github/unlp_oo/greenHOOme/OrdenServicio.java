@@ -9,17 +9,27 @@ public class OrdenServicio extends Orden {
 	private int horas;
 	private List<Tecnico>tecnicos;
 	
-	public OrdenServicio(LocalDate fecha, String domicilio, String descripcion, int horas, List<Tecnico> tecnicos) {
+	public OrdenServicio(LocalDate fecha, String domicilio, String descripcion, int horas) {
 		super(fecha, domicilio);
 		this.descripcion = descripcion;
 		this.horas = horas;
-		this.tecnicos = tecnicos;
+		tecnicos = new ArrayList<>();
 	}
+	
+	public void agregarTecnico(Tecnico tecnico) {
+		tecnicos.add(tecnico);
+	}
+	
+	@Override
 	public double calcular() {
-		// TODO Auto-generated method stub
 	    return tecnicos.stream()
-					.mapToDouble(t -> t.getValorHora()* this.horas)
-					.sum();
+					.mapToDouble(t -> t.getValorHora())
+					.sum() * this.horas;
+	}
+	
+	@Override
+	public boolean aplicaDescuento() {
+		return horas > 10;	
 	}
 
 }

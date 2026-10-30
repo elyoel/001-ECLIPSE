@@ -13,14 +13,15 @@ public class OrdenCompra extends Orden {
 	public double getPrecioEnvio() {
 		return precioEnvio;
 	}
-
-	public void setPrecioEnvio(double precioEnvio) {
-		this.precioEnvio = precioEnvio;
-	}
-
+	
+	@Override
 	public double calcular() {
-		// TODO Auto-generated method stub
 		return getPrecioEnvio();
+	}
+	
+	@Override
+	public boolean aplicaDescuento() {
+		return cantidadProductos() > 5;
 	}
 	
 }

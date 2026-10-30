@@ -20,10 +20,5 @@ public class Producto {
 	public void setCosto(double costo) {
 		this.costo = costo;
 	}
-
-	public String toString() {
-		return "Producto [nombre=" + nombre + ", tipoMaterial=" + tipoMaterial + ", costo=" + costo
-				+ ", esBiodefradable=" + esBiodefradable + "]";
-	}
 	
 }

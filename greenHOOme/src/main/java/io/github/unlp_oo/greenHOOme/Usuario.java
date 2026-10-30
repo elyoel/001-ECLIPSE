@@ -15,7 +15,7 @@ public class Usuario {
 		}
 	
 	public void agregarOrden(Orden orden) {
-		
+		ordenes.add(orden);
 	}
 	
 	
